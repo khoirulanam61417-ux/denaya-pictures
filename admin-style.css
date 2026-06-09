@@ -1,0 +1,250 @@
+/* =========================================
+   Reset & Base Styles (Sama seperti index)
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f5f0; /* Warm off-white */
+    color: #3a3835; /* Dark grey, almost black */
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+/* Grain Overlay Effect */
+.grain-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+}
+
+/* =========================================
+   Layout Dashboard
+========================================= */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   Sidebar Styling (Elegant Minimalist)
+========================================= */
+.sidebar {
+    width: 280px;
+    background-color: #efece5; /* Soft beige */
+    border-right: 1px solid #e2dcd0;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+    color: #2c2a27;
+}
+
+.sidebar-header .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    flex: 1;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 15px 30px;
+    color: #5a5753;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+    color: #2c2a27;
+    background-color: rgba(0,0,0,0.03);
+    border-left-color: #2c2a27;
+    font-weight: 500;
+}
+
+.logout-link {
+    margin-top: 30px;
+    color: #a84b4b !important;
+}
+
+.sidebar-footer {
+    padding: 20px 30px;
+}
+
+/* =========================================
+   Main Content & Typography
+========================================= */
+.main-content {
+    flex: 1;
+    padding: 60px;
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #888;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #2c2a27;
+}
+
+/* =========================================
+   Tabs & Cards
+========================================= */
+.tab-content {
+    display: none;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.active-tab {
+    display: block;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    background-color: transparent;
+    padding: 0;
+    max-width: 700px;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* =========================================
+   Forms & Inputs
+========================================= */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4a4845;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dcd7ce;
+    border-radius: 0; /* Menghilangkan sudut bulat agar lebih elegan */
+    font-size: 1rem;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2c2a27;
+    background-color: #faf9f7;
+}
+
+.form-group input[type="file"] {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   Buttons (Senada dengan index.php)
+========================================= */
+.btn-primary, .btn-ghost {
+    display: inline-block;
+    padding: 15px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s ease;
+    border-radius: 0;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #2c2a27;
+}
+
+.btn-primary {
+    background-color: #2c2a27;
+    color: #f7f5f0;
+    margin-top: 15px;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: #2c2a27;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: #2c2a27;
+    width: 100%;
+}
+
+.btn-ghost:hover {
+    background-color: #2c2a27;
+    color: #f7f5f0;
+}
