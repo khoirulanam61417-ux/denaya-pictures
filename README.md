@@ -1,1 +1,0 @@
-# denaya-pictures
